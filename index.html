@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>MyOwnTracker</title>
+  <meta name="description" content="Личен календар със зелени и червени дни.">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="MyOwnTracker">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#f7f7f5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f0f10" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <h1 id="title" class="title" aria-live="polite"></h1>
+      <nav class="nav" aria-label="Навигация по месеци">
+        <button id="prev" type="button" class="nav-btn" aria-label="Предишен месец">‹</button>
+        <button id="next" type="button" class="nav-btn" aria-label="Следващ месец">›</button>
+      </nav>
+    </header>
+
+    <section id="calendar" class="calendar">
+      <div id="weekdays" class="weekdays" aria-hidden="true"></div>
+      <div id="grid" class="grid" role="group"></div>
+    </section>
+
+    <p id="counter" class="counter" aria-live="polite">
+      <span class="count"><span class="dot" data-state="green" aria-hidden="true"></span><span data-count="green">0</span> <span data-word="green">зелени</span></span>
+      <span class="sep" aria-hidden="true">·</span>
+      <span class="count"><span class="dot" data-state="red" aria-hidden="true"></span><span data-count="red">0</span> <span data-word="red">червени</span></span>
+    </p>
+
+    <div class="today-row">
+      <button id="today" type="button" class="today-btn is-hidden" disabled>Днес</button>
+    </div>
+  </main>
+</body>
+</html>
